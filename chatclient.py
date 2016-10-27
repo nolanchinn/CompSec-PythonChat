@@ -36,7 +36,3 @@ if __name__ == "__main__":
 	client = Client('0.0.0.0', 5000, 'nolan')
 	client.connect()
 	client.run()
-
-	
-
-
