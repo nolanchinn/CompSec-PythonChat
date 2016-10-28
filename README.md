@@ -19,3 +19,4 @@ Nolan Chinn, Bryan Panjaitan, Nathan Yan
  - split server functionality into separate functions
  - split client code into its own class
  - split client functionality into separate functions
+ - write tests for checking some basic stuff

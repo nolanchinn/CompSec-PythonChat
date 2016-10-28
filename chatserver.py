@@ -38,7 +38,7 @@ class Server:
                     self.CONNECTION_LIST.append(sockfd)
                     print "Client (%s, %s) connected" % addr
                  
-                    self.broadcast_data(sockfd, "[%s:%s] entered room\n" % addr)
+                    self.broadcast_data(sockfd, "A user has entered the room\n")
              
                 #Some incoming message from a client
                 else:
@@ -46,11 +46,11 @@ class Server:
                     try:
                         data = sock.recv(self.RECV_BUFFER)
                         if data:
-                            self.broadcast_data(sock, "\r" + '<' + str(sock.getpeername()) + '> ' + data)  
+                            self.broadcast_data(sock, data)  
                             print("\r" + '<' + str(sock.getpeername()) + '>' + data)         
                  
                     except:
-                        self.broadcast_data(sock, "Client (%s, %s) is offline" % addr)
+                        self.broadcast_data(sock, "A user has disconnected")
                         print "Client (%s, %s) is offline" % addr
                         sock.close()
                         self.CONNECTION_LIST.remove(sock)

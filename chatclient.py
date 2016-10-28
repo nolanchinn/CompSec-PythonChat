@@ -23,7 +23,7 @@ class Client:
 					sys.stdout.write(data)
 			else:
 				msg = sys.stdin.readline()
-				self.sock.send(msg)
+				self.sock.send(self.name + ': ' + msg)
 
 	def run(self):
 		while(1):
